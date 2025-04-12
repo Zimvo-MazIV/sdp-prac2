@@ -16,4 +16,15 @@ public class SimpleFunctions {
         }
         return adder;
     }
+
+    //Removes the first character from every element in a list
+    public int Task2(int[] a , int value){
+        int counter = 0; //keeps track of how many times a value appears
+        for (int i  = 0; i < a.length; i ++){ 
+            if (a[i] == value){ //checks if the current element is equal to the value
+                counter++;//if the above is true it increments the counter by 1
+            }
+        }
+        return counter;//returns total count
+    }
 }
