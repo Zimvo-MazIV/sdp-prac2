@@ -16,4 +16,21 @@ public class SimpleFunctions {
         }
         return adder;
     }
+
+    public static boolean Task3(String input) {
+    int count = 0;
+
+    for (char c : input.toCharArray()) {
+        if (c == '(') {
+            count++;
+        } else if (c == ')') {
+            count--;
+            if (count < 0) {
+                return false; // More closing than opening
+            } }
+        }
+
+        return count == 0; // Must be zero if perfectly matched
+    }
+
 }
