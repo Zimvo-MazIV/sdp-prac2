@@ -7,4 +7,33 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+    @Test void testTask2(){
+        App task2 = new App();
+        //ARRANGE
+
+        //test 1
+        Object[] to_test = {"nJordan", "dDolly", "<Maz"};
+        Object[] expected = {"Jordan", "Dolly", "Maz"};
+
+        //test 2
+        Object[] to_test2 = {"oOmni Man", "iInvincible", "bBattleBeast", ""};
+        Object[] expected2 = {"Omni Man", "Invincible", "BattleBeast"};
+
+        //test 3
+        Object[] to_test3 ={"", "nIamSoLonely"};
+        Object[] expected3 ={"IamSoLonely"};
+
+        //ACT
+        //test 1
+        Object[] result =  task2.flatten(to_test);
+        //test 2
+        Object[] result2 = task2.flatten(to_test2);
+        //test 3
+        Object[] result3 = task2.flatten(to_test3);
+
+        //ASSERT
+        assertArrayEquals(expected, result);
+        assertArrayEquals(expected2, result2);
+        assertArrayEquals(expected3, result3);
+    }
 }
