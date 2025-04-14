@@ -10,14 +10,14 @@ import sdp.prac2.SimpleFunctions;
 
 public class App {
     public App() {
-        // No setup needed
+        //following the warmup structure
     }
+//This code is recycled from the App.java that was found in the warmup section with some key major changes
+    public Object[] flatten(Object[] nested) { //we not are not taking in a nested array but rather one array because test 2 needs one array
+        List<Object> result = new ArrayList<>(); //for final comparison
 
-    public Object[] flatten(Object[] nested) {
-        List<Object> result = new ArrayList<>();
-
-        for (Object item : nested) {
-            if (item instanceof String) {
+        for (Object item : nested) { //for each item in the list/array given.
+            if (item instanceof String) { 
                 String str = (String) item;
                 if (str.length() > 1) {
                     result.add(str.substring(1));
