@@ -33,4 +33,22 @@ public class SimpleFunctions {
         return count == 0; // Must be zero if perfectly matched
     }
 
+    public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
+        // Check if lists are of different sizes
+        if (a.size() != b.size()) {
+            return null;
+        }
+
+        List<Integer> result = new ArrayList<>();
+        int n = a.size();
+
+        // Multiply corresponding elements
+        for (int i = 0; i < n; i++) {
+            int product = a.get(i) * b.get(n - 1 - i);  // a[i] * b[last - i]
+            result.add(product);
+        }
+
+        return result;
+    }
 }
+
