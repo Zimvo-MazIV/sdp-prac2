@@ -50,6 +50,19 @@ public class SimpleFunctions {
 
         return result;
     }
+    //g22m8834 Task5, checks if list is sorted
+    public static boolean Task5(List<Integer> lst){
+        if(lst == null || lst.size() <=1){
+            return true;
+        }
+
+        for (int x=0; x < lst.size() -1; x++){
+            if (lst.get(x) > lst.get(x+1)) {
+                return false;
+            }
+        }
+        return true;
+    }
     
     //g21m7567 Task 6, round up to highest multiple of 100
     public static List<Integer> Task6(List<Integer> numbers) {
