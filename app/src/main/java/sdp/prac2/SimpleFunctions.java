@@ -50,5 +50,21 @@ public class SimpleFunctions {
 
         return result;
     }
+    
+    //g21m7567 Task 6, round up to highest multiple of 100
+    public static List<Integer> Task6(List<Integer> numbers) {
+        List<Integer> result = new ArrayList<>();  
+        for (int num : numbers) {
+            if (num % 100 == 0) {
+                result.add(num);  //Already a multiple of 100
+            } else {
+                //Calculate next highest multiple of 100
+                int rounded = ((num / 100) + 1) * 100;
+                result.add(rounded);
+            }
+        }
+            
+        return result;
+        }
 }
 
