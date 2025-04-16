@@ -36,4 +36,27 @@ class AppTest {
         assertArrayEquals(expected2, result2);
         assertArrayEquals(expected3, result3);
     }
+    @Test
+    public void testTask5_SortedList() {
+        // Arrange
+        List<Integer> input = Arrays.asList(1, 2, 3, 4);
+
+        // Act
+        boolean result = SimpleFunctions.Task5(input);
+
+        // Assert
+        assertTrue(result);
+    }
+
+    @Test
+    public void testTask5_UnsortedList() {
+        // Arrange
+        List<Integer> input = Arrays.asList(1, 3, 2, 4);
+
+        // Act
+        boolean result = SimpleFunctions.Task5(input);
+
+        // Assert
+        assertFalse(result);
+    }
 }
