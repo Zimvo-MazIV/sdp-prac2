@@ -40,6 +40,34 @@ class AppTest {
         assertArrayEquals(expected3, result3);
     }
 
+        // Test cases for Task 3
+        @Test
+        void testBalancedParentheses() {
+            assertTrue(App.Task3("()"));
+            assertTrue(App.Task3("(())"));
+            assertTrue(App.Task3("()(())"));
+            assertTrue(App.Task3("((()(())))"));
+        }
+    
+        @Test
+        void testUnbalancedParentheses() {
+            assertFalse(App.Task3(")("));  // Wrong order
+            assertFalse(App.Task3("((())"));  // Missing closing ')'
+            assertFalse(App.Task3("())"));  // Extra closing ')'
+            assertFalse(App.Task3("(()())("));  // Extra '('
+        }
+    
+        @Test
+        void testEmptyString() {
+            assertTrue(App.Task3(""));  // Empty input should be valid
+        }
+    
+        @Test
+        void testNoParentheses() {
+            assertTrue(App.Task3("Hello World!"));  // Should return true (no '(' or ')')
+        }
+    
+
     //Testers for Task 1
     @Test
     public void testTask1() {
