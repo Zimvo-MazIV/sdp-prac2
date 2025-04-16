@@ -82,4 +82,20 @@ class AppTest {
         assertEquals(0, ListOperations.Task1(a, b));
     }
 
+    @Test
+    public void testTask6_1() {  //Checks if a number is a multiple of 100
+        List<Integer> input = Arrays.asList(200, 400, 600);
+        List<Integer> expected = Arrays.asList(200, 400, 600);
+        assertEquals(expected, Task6.roundUpToNext100(input));
+    }
+
+    @Test
+    public void testTask6_2() {  //Rounds up each number to the next-highest multiple of 100 
+        List<Integer> input = Arrays.asList(202, 370, 499);
+        List<Integer> expected = Arrays.asList(300, 400, 500);
+        assertEquals(expected, Task6.roundUpToNext100(input));
+    }
+
+    
+
 }
