@@ -1,6 +1,7 @@
 package sdp.prac2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimpleFunctions {
     public SimpleFunctions() {}
@@ -27,7 +28,7 @@ public class SimpleFunctions {
         }
         return counter;//returns total count
     }
-}
+
 
     public static boolean Task3(String input) {
     int count = 0;

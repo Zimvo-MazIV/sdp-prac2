@@ -39,4 +39,94 @@ class AppTest {
         assertArrayEquals(expected2, result2);
         assertArrayEquals(expected3, result3);
     }
+<<<<<<< HEAD
+=======
+
+        // Test cases for Task 3
+        @Test
+        void testBalancedParentheses() {
+            assertTrue(App.Task3("()"));
+            assertTrue(App.Task3("(())"));
+            assertTrue(App.Task3("()(())"));
+            assertTrue(App.Task3("((()(())))"));
+        }
+    
+        @Test
+        void testUnbalancedParentheses() {
+            assertFalse(App.Task3(")("));  // Wrong order
+            assertFalse(App.Task3("((())"));  // Missing closing ')'
+            assertFalse(App.Task3("())"));  // Extra closing ')'
+            assertFalse(App.Task3("(()())("));  // Extra '('
+        }
+    
+        @Test
+        void testEmptyString() {
+            assertTrue(App.Task3(""));  // Empty input should be valid
+        }
+    
+        @Test
+        void testNoParentheses() {
+            assertTrue(App.Task3("Hello World!"));  // Should return true (no '(' or ')')
+        }
+    
+
+    //Testers for Task 1
+    @Test
+    public void testTask1() {
+        //Normal case
+        List<Integer> a1 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> b1 = Arrays.asList(0, 2, 4);
+        assertEquals(90, ListOperations.Task1(a1, b1));
+
+        //invalid indexes 
+        List<Integer> a2 = Arrays.asList(5, 10, 15, 20);
+        List<Integer> b2 = Arrays.asList(1, 3, 5, -1); //5 and -1 are invalid
+        assertEquals(30, ListOperations.Task1(a2, b2));  
+    
+        //Test for edge cases
+        //Empty index list
+        List<Integer> a3 = Arrays.asList(1, 2, 3);
+        List<Integer> b3 = List.of();
+        assertEquals(0, ListOperations.Task1(a3, b3));
+
+        //Empty source list
+        List<Integer> a4 = List.of();
+        List<Integer> b4 = Arrays.asList(0, 1, 2);
+        assertEquals(0, ListOperations.Task1(a4, b4));
+
+        //All indexes invalid
+        List<Integer> a5 = Arrays.asList(100, 200);
+        List<Integer> b5 = Arrays.asList(2, -1, 5);
+        assertEquals(0, ListOperations.Task1(a5, b5));
+    
+        //Test for dupilcates
+        //Duplicate valid indexes
+        List<Integer> a = Arrays.asList(2, 4, 6, 8);
+        List<Integer> b = Arrays.asList(1, 1, 1, 3); 
+        assertEquals(20, ListOperations.Task1(a, b)); 
+    
+        //Test for negative numbers in both lists
+        //Negative numbers in both lists
+        List<Integer> a6 = Arrays.asList(-5, -3, -1, 0, 1, 3, 5);
+        List<Integer> b6 = Arrays.asList(0, 2, 4, 6);
+        assertEquals(0, ListOperations.Task1(a, b));
+    }
+
+    @Test
+    public void testTask6_1() {  //Checks if a number is a multiple of 100
+        List<Integer> input = Arrays.asList(200, 400, 600);
+        List<Integer> expected = Arrays.asList(200, 400, 600);
+        assertEquals(expected, Task6.roundUpToNext100(input));
+    }
+
+    @Test
+    public void testTask6_2() {  //Rounds up each number to the next-highest multiple of 100 
+        List<Integer> input = Arrays.asList(202, 370, 499);
+        List<Integer> expected = Arrays.asList(300, 400, 500);
+        assertEquals(expected, Task6.roundUpToNext100(input));
+    }
+
+    
+
+>>>>>>> ea4683339fee550271250e6526805adfeb106958
 }
